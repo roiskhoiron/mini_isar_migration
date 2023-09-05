@@ -6,13 +6,17 @@ import 'file_manager_provider.dart';
 
 part 'main.g.dart';
 
+// flutter pub run build_runner build --delete-conflicting-outputs
 @collection
 class Count {
   final Id id;
 
   final int step;
 
-  Count(this.id, this.step);
+  @Index(unique: true)
+  final String name;
+
+  Count(this.id, this.step, {this.name = '0'});
 }
 
 void main() async {
@@ -25,7 +29,6 @@ void main() async {
   await FileManagerProvider.setup();
 
   // Open Isar instance
-
   final dbms = DbmsProvider(isar: await initIsar());
   print('database directory: ${dbms.isar.directory}');
 
@@ -77,7 +80,17 @@ class _CounterAppState extends State<CounterApp> {
       title: 'Isar Counter',
       theme: theme,
       home: Scaffold(
-        appBar: AppBar(title: const Text('Isar Counter')),
+        appBar: AppBar(
+          title: const Text('Isar Counter'),
+          actions: [
+            TextButton(
+                onPressed: () => db.backup(user: 'rois', key: 'isargunung23'),
+                child: const Text('Backup')),
+            TextButton(
+                onPressed: () => db.restore(key: 'isargunung23', user: 'rois'),
+                child: const Text('Restore')),
+          ],
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

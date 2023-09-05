@@ -19,30 +19,16 @@ class FileManagerProvider {
   static String subMedia = '/Media';
   static String subBackups = '/Backups';
   static String subDatabases = '/Databases';
-  static String subMediaAudio = '/Callink Audio';
-  static String subMediaVideo = '/Callink Video';
-  static String subMediaImages = '/Callink Images';
-  static String subMediaDocuments = '/Callink Documents';
-  static String subMediaStickers = '/Callink Stickers';
+  static String subMediaAudio = '/Audio';
+  static String subMediaVideo = '/Video';
+  static String subMediaImages = '/Images';
+  static String subMediaDocuments = '/Documents';
+  static String subMediaStickers = '/Stickers';
 
   FileManagerProvider._init();
 
   static Future<void> setup() async {
     await hasAcceptedPermissions();
-
-    // var diverInfo = await DeviceInfoPlugin().androidInfo;
-    //
-    // if (diverInfo.version.sdkInt >= 31) {
-    //   final directory = await getExternalStorageDirectory();
-    //   if (directory == null) {
-    //     print('External Storage Directory is null');
-    //     final dir = await getApplicationSupportDirectory();
-    //     _instance.appSupportDirectory = dir.path;
-    //   } else {
-    //     final path = directory.path;
-    //     _instance.appSupportDirectory = path;
-    //   }
-    // }
 
     List folders = [
       root,

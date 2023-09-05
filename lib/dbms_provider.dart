@@ -108,7 +108,7 @@ Future<Isar> initIsar() async {
 }
 
 class Env {
-  static int get dbVersion => 1;
+  static int get dbVersion => 2;
   static String get dbName => 'migrationApp';
 }
 
