@@ -13,10 +13,9 @@ class Count {
 
   final int step;
 
-  @Index(unique: true)
-  final String name;
+  final String nama;
 
-  Count(this.id, this.step, {this.name = '0'});
+  Count(this.id, this.step, {this.nama = '0'});
 }
 
 void main() async {

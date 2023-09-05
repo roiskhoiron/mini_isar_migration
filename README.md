@@ -6,10 +6,18 @@ this is project example isar to migration from another version to target version
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Beberapa hal yang perlu dipertimbangkan ketika ingin melakukan migrasi versi local database isar ke versi yang lebih baru:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Melakukan perubahan nama field]()
+- [Penambahan field harus ditentukan nilainya jika tidak maka akan bernilai NULL]()
+- [Perubahan nilai @index(unique: false) menjadi @index(unique: true) harus dilakukan secara manual]()
+
+
+## Catatan Migrasi versi ke versi
+
+- [Buatlah dokumentasi perubahan yang dilakukan pada database, schema dan atribute serta nilai yang ditentukan juga dirubah]()
+- [Gunakan isolate untuk melakukan migrasi database]()
+- [Load database dengan pagination jika diperlukan]()
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
